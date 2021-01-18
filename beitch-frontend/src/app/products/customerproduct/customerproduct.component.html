@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Products</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Product Description</th>
+                        <th>Price</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<form [formGroup]="signupForm">-->
+                        <tr *ngFor="let product of products">
+                            <td scope="row"> {{product.product_id}} </td>
+                            <td> {{product.name}} </td>
+                            <td> {{product.product_description}} </td>
+                            <td> {{product.price}}</td>
+                            <td> 
+                                <div [formGroup] = "signupForm">
+                                <input formControlName="idProduc" class="form-control" type = "text" > 
+                                </div>
+                            </td>
+                            </tr>
+               <!-- </form>-->
+                </tbody>
+            </table>
+            <div class="container">
+                <button class="btn btn-primary">Create Order</button>
+                <button class="btn btn-information" style="margin-left: 10px;">Back</button>
+            </div>
+        </div>
+    </div>
+</div>
